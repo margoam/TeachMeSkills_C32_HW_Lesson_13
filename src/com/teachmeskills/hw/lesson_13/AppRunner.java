@@ -53,6 +53,9 @@ public class AppRunner {
         } catch (WrongLoginException | WrongPasswordException e) {
             System.out.println("Validation failed: " + e.getMessage());
         }
+        finally {
+            scanner.close();
+        }
 
         //2nd method check
         try {
@@ -61,6 +64,9 @@ public class AppRunner {
                     + checkResultSecondMethod);
         } catch (WrongLoginException | WrongPasswordException e) {
             System.out.println("Validation failed: " + e.getMessage());
+        }
+        finally {
+            scanner.close();
         }
     }
 }
